@@ -1,0 +1,241 @@
+<?php
+
+/**
+ * Advert Repository
+ */
+
+namespace Repository;
+
+use Doctrine\DBAL\Connection;
+use Utils\Paginator;
+
+/**
+ * Class TagRepository.
+ *
+ * @package Repository
+ */
+class AdvertRepository
+{
+    const PURCHASE_TYPE = 0;
+    const SALE_TYPE = 1;
+    const RETURN_TYPE = 2;
+    const SWAP_TYPE = 3;
+
+    /**
+     * Number of items per page.
+     *
+     * const int NUM_ITEMS
+     */
+    const NUM_ITEMS = 5;
+
+    /**
+     * Doctrine DBAL connection.
+     *
+     * @var \Doctrine\DBAL\Connection $db
+     */
+    protected $db;
+
+    /**
+     * TagRepository constructor.
+     *
+     * @param \Doctrine\DBAL\Connection $db
+     */
+    public function __construct(Connection $db)
+    {
+        $this->db = $db;
+    }
+
+    /**
+     * Fetch all records.
+     *
+     * @return array Result
+     */
+    public function findAll()
+    {
+        $queryBuilder = $this->queryAll();
+
+        return $queryBuilder->execute()->fetchAll();
+    }
+
+    /**
+     * Get records paginated.
+     *
+     * @param int $page Current page number
+     *
+     * @return array Result
+     */
+    public function findAllPaginated($page = 1)
+    {
+        $countQueryBuilder = $this->queryAll()
+            ->select('COUNT(DISTINCT a.id) AS total_results')
+            ->setMaxResults(1);
+
+        $paginator = new Paginator($this->queryAll(), $countQueryBuilder);
+        $paginator->setCurrentPage($page);
+        $paginator->setMaxPerPage(self::NUM_ITEMS);
+
+        return $paginator->getCurrentPageResults();
+    }
+
+    /**
+     * Get active records paginated.
+     *
+     * @param int $page Current page number
+     *
+     * @return array Result
+     */
+    public function findAllActivePaginated($page = 1)
+    {
+        $countQueryBuilder = $this->queryAll()
+            ->select('COUNT(DISTINCT a.id) AS total_results')
+            ->where('a.is_active = :active')
+            ->setParameter('active', 1, \PDO::PARAM_INT)
+            ->setMaxResults(1);
+
+        $paginator = new Paginator(
+            $this->queryAll()
+                 ->where('a.is_active = :active')
+                 ->setParameter('active', 1, \PDO::PARAM_INT),
+            $countQueryBuilder
+        );
+        $paginator->setCurrentPage($page);
+        $paginator->setMaxPerPage(self::NUM_ITEMS);
+
+        return $paginator->getCurrentPageResults();
+    }
+
+    /**
+     * Get records paginated.
+     *
+     * @param array $data Search data
+     * @param int   $page Current page number
+     *
+     * @return array Result
+     */
+    public function findSearchPaginated($data, $page = 1)
+    {
+        $queryBuilder = $this->queryAll()
+                             ->where('a.is_active = 1');
+        $countQueryBuilder = $this->queryAll()
+                                  ->select('COUNT(DISTINCT a.id) AS total_results')
+                                  ->where('a.is_active = 1');
+        if ($data) {
+            if (isset($data['topic']) && $data['topic']) {
+                $queryBuilder->andWhere('a.topic LIKE "%'.$data['topic'].'%"');
+                $countQueryBuilder->andWhere('a.topic LIKE "%'.$data['topic'].'%"');
+            }
+            if (isset($data['city']) && $data['city']) {
+                $queryBuilder->andWhere('a.city LIKE "%'.$data['city'].'%"');
+                $countQueryBuilder->andWhere('a.city LIKE "%'.$data['city'].'%"');
+            }
+            if (isset($data['type']) && $data['type']) {
+                $queryBuilder->andWhere('a.type = '.$data['type']);
+                $countQueryBuilder->andWhere('a.type = '.$data['type']);
+            }
+            if (isset($data['category_id']) && $data['category_id']) {
+                $queryBuilder->andWhere('a.category_id = '.$data['category_id']);
+                $countQueryBuilder->andWhere('a.category_id = '.$data['category_id']);
+            }
+            if (isset($data['price_from']) && is_numeric($data['price_from']) && isset($data['price_to']) && is_numeric($data['price_to'])) {
+                $queryBuilder->andWhere('a.price BETWEEN '.$data['price_from'].' AND '.$data['price_to']);
+                $countQueryBuilder->andWhere('a.price BETWEEN '.$data['price_from'].' AND '.$data['price_to']);
+            } elseif (isset($data['price_from']) && is_numeric($data['price_from'])) {
+                $queryBuilder->andWhere('a.price >= '.$data['price_from']);
+                $countQueryBuilder->andWhere('a.price >= '.$data['price_from']);
+            } elseif (isset($data['price_to']) && is_numeric($data['price_to'])) {
+                $queryBuilder->andWhere('a.price <= '.$data['price_to']);
+                $countQueryBuilder->andWhere('a.price <= '.$data['price_to']);
+            }
+        }
+
+        $paginator = new Paginator($queryBuilder->orderBy('a.id', 'desc'), $countQueryBuilder->setMaxResults(1));
+        $paginator->setCurrentPage($page);
+        $paginator->setMaxPerPage(self::NUM_ITEMS);
+
+        return $paginator->getCurrentPageResults();
+    }
+
+    /**
+     * Find one record.
+     *
+     * @param string $id Element id
+     *
+     * @return array|mixed Result
+     */
+    public function findOneById($id)
+    {
+        $queryBuilder = $this->queryAll();
+        $queryBuilder->where('a.id = :id')
+            ->setParameter(':id', $id, \PDO::PARAM_INT);
+        $result = $queryBuilder->execute()->fetch();
+
+        return !$result ? [] : $result;
+    }
+
+    /**
+     * Save record.
+     *
+     * @param array $tag Tag
+     *
+     * @return boolean Result
+     */
+    public function save($tag)
+    {
+        if (isset($tag['id']) && ctype_digit((string) $tag['id'])) {
+            // update record
+            $id = $tag['id'];
+            unset($tag['id']);
+
+            return $this->db->update('si_adverts', $tag, ['id' => $id]);
+        } else {
+            // add new record
+            return $this->db->insert('si_adverts', $tag);
+        }
+    }
+
+    /**
+     * Remove record.
+     *
+     * @param array $category Category
+     *
+     * @return boolean Result
+     */
+    public function delete($category)
+    {
+        return $this->db->delete('si_adverts', ['id' => $category['id']]);
+    }
+
+    /**
+     * Gets choices array for form select.
+     *
+     * @return array
+     */
+    public function getChoices()
+    {
+        $choices = [];
+
+        foreach ($this->findAll() as $category) {
+            $choices[$category['name']] = $category['id'];
+        }
+
+        return $choices;
+    }
+
+    /**
+     * Query all records.
+     *
+     * @return \Doctrine\DBAL\Query\QueryBuilder Result
+     */
+    protected function queryAll()
+    {
+        $queryBuilder = $this->db->createQueryBuilder();
+
+        return $queryBuilder->select(
+            'a.id', 'a.topic', 'a.content', 'a.city', 'a.price', 'a.type', 'a.category_id',
+            'c.name as category_name', 'a.created_at', 'u.login as author, a.user_id', 'a.is_active'
+            )
+            ->from('si_adverts', 'a')
+            ->join('a', 'si_categories', 'c', 'a.category_id = c.id')
+            ->join('a', 'si_users', 'u', 'a.user_id = u.id');
+    }
+}

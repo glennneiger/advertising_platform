@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% form_theme form with ['bootstrap_3_horizontal_layout.html.twig', 'form/form_errors.html.twig'] %}
+
+{% block stylesheets %}
+  {{ parent() }}
+  <style>
+    footer {
+      bottom: 0;
+      position: fixed;
+      width: 100%;
+    }
+  </style>
+{% endblock %}
+
+{% block title %}{{ 'title.user_edit'|trans }} - {{ user.login }}{% endblock %}
+
+{% block body %}
+    <div class="col-md-12">
+        <h1>{{ 'title.user_edit'|trans }} - {{ user.login }}</h1>
+    </div>
+    <div class="col-md-12">
+        {{ form_start(form, { method: 'post', action: url('user_edit', {'id': user.user_id}) }) }}
+        {{ form_widget(form) }}
+        <div class="col-md-12">
+            <div class="form-group">
+                <input type="submit" value="{{ 'action.save'|trans }}" class="btn btn-success" />
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

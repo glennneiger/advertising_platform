@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.adverts_list'|trans }}
+{% endblock %}
+
+{% block body %}
+    <div class="col-md-12">
+        <h1>
+            {{ 'title.adverts_list'|trans }}
+        </h1>
+    </div>
+    {% if paginator.data|length %}
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>
+                        {{ 'table.head.advert.topic'|trans }}
+                    </th>
+                    <th>
+                        {{ 'table.head.advert.city'|trans }}
+                    </th>
+                    <th>
+                        {{ 'table.head.advert.price'|trans }}
+                    </th>
+                    <th>
+                        {{ 'table.head.advert.type'|trans }}
+                    </th>
+                    <th>
+                        {{ 'table.head.advert.category'|trans }}
+                    </th>
+                    <th>
+                        {{ 'table.head.operations'|trans }}
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for row in paginator.data %}
+                    <tr>
+                        <td>
+                            {{ row.topic }}
+                        </td>
+                        <td>
+                            {{ row.city }}
+                        </td>
+                        <td>
+                            {{ row.price }}
+                        </td>
+                        <td>
+                            {% if row.type == 0 %}
+                                {{ 'advert.type.purchase.label'|trans }}
+                            {% elseif row.type == 1 %}
+                                {{ 'advert.type.sale.label'|trans}}
+                            {% elseif row.type == 2 %}
+                                {{ 'advert.type.return.label'|trans }}
+                            {% elseif row.type == 3 %}
+                                {{ 'advert.type.swap.label'|trans }}
+                            {% endif %}
+                        </td>
+                        <td>
+                            {{ row.category_name }}
+                        </td>
+                        <td>
+                            <a href="{{ url('advert_view', {'id': row.id}) }}">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                            </a>
+                            {% if is_granted('ROLE_ADMIN') or (user and user.id == row.user_id) %}
+                                {% if row.is_active %}
+                                    {% set icon = 'ban-circle' %}
+                                {% else %}
+                                    {% set icon = 'ok-circle' %}
+                                {% endif %}
+                                <a href="{{ url('advert_activity', {'id': row.id}) }}">
+                                    <i class="glyphicon glyphicon-{{ icon }}"></i>
+                                </a>
+                                <a href="{{ url('advert_edit', {'id': row.id}) }}">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                </a>
+                            {% endif %}
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <a href="{{ url('advert_delete', {'id': row.id}) }}">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% include 'default/_paginator.html.twig' with {
+            paginator: paginator,
+            route_name: 'advert_index_paginated',
+            } %}
+        </div>
+    {% else %}
+        <div class="col-md-12">
+            {{ 'message.empty.list'|trans }}
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>     &raquo; Compilation errors
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/Controller.html">\Controller</a></li>
+                                                        <li><a href="../namespaces/Form.html">\Form</a></li>
+                                                        <li><a href="../namespaces/Provider.html">\Provider</a></li>
+                                                        <li><a href="../namespaces/Repository.html">\Repository</a></li>
+                                                        <li><a href="../namespaces/Service.html">\Service</a></li>
+                                                        <li><a href="../namespaces/Utils.html">\Utils</a></li>
+                                                        <li><a href="../namespaces/Validator.html">\Validator</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">55</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+
+            <ul class="side-nav nav nav-list">
+                <li class="nav-header">Navigation</li>
+                                                                                                                                                                                            <li><a href="#Validator/Constraints/AdminRoleValidator.php"><i class="icon-file"></i> Validator/Constraints/AdminRoleValidator.php</a></li>
+                                                                                                    <li><a href="#Validator/Constraints/UniqueEmailValidator.php"><i class="icon-file"></i> Validator/Constraints/UniqueEmailValidator.php</a></li>
+                                                                                                    <li><a href="#Validator/Constraints/UniqueUserValidator.php"><i class="icon-file"></i> Validator/Constraints/UniqueUserValidator.php</a></li>
+                                                                                                                                                            <li><a href="#controllers.php"><i class="icon-file"></i> controllers.php</a></li>
+                                                                                                    <li><a href="#Form/AdvertType.php"><i class="icon-file"></i> Form/AdvertType.php</a></li>
+                                                                                                    <li><a href="#Form/RegisterType.php"><i class="icon-file"></i> Form/RegisterType.php</a></li>
+                                                                                                    <li><a href="#Form/SearchType.php"><i class="icon-file"></i> Form/SearchType.php</a></li>
+                                                                                                    <li><a href="#Form/EditDataType.php"><i class="icon-file"></i> Form/EditDataType.php</a></li>
+                                                                                                    <li><a href="#Form/LoginType.php"><i class="icon-file"></i> Form/LoginType.php</a></li>
+                                                                                                    <li><a href="#Form/AdvertPhotoType.php"><i class="icon-file"></i> Form/AdvertPhotoType.php</a></li>
+                                                                                                    <li><a href="#Form/MessageType.php"><i class="icon-file"></i> Form/MessageType.php</a></li>
+                                                                                                    <li><a href="#Form/CategoryType.php"><i class="icon-file"></i> Form/CategoryType.php</a></li>
+                                                                                                    <li><a href="#app.php"><i class="icon-file"></i> app.php</a></li>
+                                                                                                    <li><a href="#console.php"><i class="icon-file"></i> console.php</a></li>
+                                                                                                                                                            <li><a href="#Repository/MessageRepository.php"><i class="icon-file"></i> Repository/MessageRepository.php</a></li>
+                                                                                                    <li><a href="#Repository/AdvertPhotoRepository.php"><i class="icon-file"></i> Repository/AdvertPhotoRepository.php</a></li>
+                                                                                                                                                                                                                                                                            <li><a href="#Controller/AuthController.php"><i class="icon-file"></i> Controller/AuthController.php</a></li>
+                                                                                                    <li><a href="#Controller/AdvertPhotoController.php"><i class="icon-file"></i> Controller/AdvertPhotoController.php</a></li>
+                                                                                                    <li><a href="#Controller/HomepageController.php"><i class="icon-file"></i> Controller/HomepageController.php</a></li>
+                                                                                                    <li><a href="#Controller/CategoryController.php"><i class="icon-file"></i> Controller/CategoryController.php</a></li>
+                                                                                                    <li><a href="#Controller/AdvertController.php"><i class="icon-file"></i> Controller/AdvertController.php</a></li>
+                                                                                                    <li><a href="#Controller/UserController.php"><i class="icon-file"></i> Controller/UserController.php</a></li>
+                                                                                                    <li><a href="#Controller/MessageController.php"><i class="icon-file"></i> Controller/MessageController.php</a></li>
+                                                                                                                                                                                    </ul>
+        </div>
+
+        <div class="span10 offset2">
+            <ul class="breadcrumb">
+                <li><a href="../"><i class="icon-remove-sign"></i></a><span class="divider">\</span></li>
+                <li>Compilation Errors</li>
+            </ul>
+
+            
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Validator/Constraints/AdminRoleValidator.php" id="Validator/Constraints/AdminRoleValidator.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Validator/Constraints/AdminRoleValidator.php
+                            <small style="float: right;padding-right: 10px;">2</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>20</td>
+                                        <td>Argument $value is missing from the Docblock of validate</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>20</td>
+                                        <td>Argument $constraint is missing from the Docblock of validate</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Validator/Constraints/UniqueEmailValidator.php" id="Validator/Constraints/UniqueEmailValidator.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Validator/Constraints/UniqueEmailValidator.php
+                            <small style="float: right;padding-right: 10px;">2</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>20</td>
+                                        <td>Argument $value is missing from the Docblock of validate</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>20</td>
+                                        <td>Argument $constraint is missing from the Docblock of validate</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Validator/Constraints/UniqueUserValidator.php" id="Validator/Constraints/UniqueUserValidator.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Validator/Constraints/UniqueUserValidator.php
+                            <small style="float: right;padding-right: 10px;">2</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>20</td>
+                                        <td>Argument $value is missing from the Docblock of validate</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>20</td>
+                                        <td>Argument $constraint is missing from the Docblock of validate</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="controllers.php" id="controllers.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            controllers.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Form/AdvertType.php" id="Form/AdvertType.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Form/AdvertType.php
+                            <small style="float: right;padding-right: 10px;">3</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>28</td>
+                                        <td>Argument $builder is missing from the Docblock of buildForm</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>28</td>
+                                        <td>Argument $options is missing from the Docblock of buildForm</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>148</td>
+                                        <td>Argument $resolver is missing from the Docblock of configureOptions</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Form/RegisterType.php" id="Form/RegisterType.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Form/RegisterType.php
+                            <small style="float: right;padding-right: 10px;">3</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>27</td>
+                                        <td>Argument $builder is missing from the Docblock of buildForm</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>27</td>
+                                        <td>Argument $options is missing from the Docblock of buildForm</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>185</td>
+                                        <td>Argument $resolver is missing from the Docblock of configureOptions</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Form/SearchType.php" id="Form/SearchType.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Form/SearchType.php
+                            <small style="float: right;padding-right: 10px;">3</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>28</td>
+                                        <td>Argument $builder is missing from the Docblock of buildForm</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>28</td>
+                                        <td>Argument $options is missing from the Docblock of buildForm</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>114</td>
+                                        <td>Argument $resolver is missing from the Docblock of configureOptions</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Form/EditDataType.php" id="Form/EditDataType.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Form/EditDataType.php
+                            <small style="float: right;padding-right: 10px;">3</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>24</td>
+                                        <td>Argument $builder is missing from the Docblock of buildForm</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>24</td>
+                                        <td>Argument $options is missing from the Docblock of buildForm</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>96</td>
+                                        <td>Argument $resolver is missing from the Docblock of configureOptions</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Form/LoginType.php" id="Form/LoginType.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Form/LoginType.php
+                            <small style="float: right;padding-right: 10px;">2</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>24</td>
+                                        <td>Argument $builder is missing from the Docblock of buildForm</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>24</td>
+                                        <td>Argument $options is missing from the Docblock of buildForm</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Form/AdvertPhotoType.php" id="Form/AdvertPhotoType.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Form/AdvertPhotoType.php
+                            <small style="float: right;padding-right: 10px;">3</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>25</td>
+                                        <td>Argument $builder is missing from the Docblock of buildForm</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>25</td>
+                                        <td>Argument $options is missing from the Docblock of buildForm</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>56</td>
+                                        <td>Argument $resolver is missing from the Docblock of configureOptions</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Form/MessageType.php" id="Form/MessageType.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Form/MessageType.php
+                            <small style="float: right;padding-right: 10px;">3</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>26</td>
+                                        <td>Argument $builder is missing from the Docblock of buildForm</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>26</td>
+                                        <td>Argument $options is missing from the Docblock of buildForm</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>57</td>
+                                        <td>Argument $resolver is missing from the Docblock of configureOptions</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Form/CategoryType.php" id="Form/CategoryType.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Form/CategoryType.php
+                            <small style="float: right;padding-right: 10px;">3</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>25</td>
+                                        <td>Argument $builder is missing from the Docblock of buildForm</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>25</td>
+                                        <td>Argument $options is missing from the Docblock of buildForm</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>55</td>
+                                        <td>Argument $resolver is missing from the Docblock of configureOptions</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="app.php" id="app.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            app.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="console.php" id="console.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            console.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Repository/MessageRepository.php" id="Repository/MessageRepository.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Repository/MessageRepository.php
+                            <small style="float: right;padding-right: 10px;">4</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>246</td>
+                                        <td>Name of argument $conversation does not match with the DocBlock&#039;s name $advert in canView()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>246</td>
+                                        <td>Name of argument $user does not match with the DocBlock&#039;s name $userId in canView()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>notice</td>
+                                        <td>246</td>
+                                        <td>Parameter $advert could not be found in canView()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>notice</td>
+                                        <td>246</td>
+                                        <td>Parameter $userId could not be found in canView()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Repository/AdvertPhotoRepository.php" id="Repository/AdvertPhotoRepository.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Repository/AdvertPhotoRepository.php
+                            <small style="float: right;padding-right: 10px;">2</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>64</td>
+                                        <td>Argument $advertId is missing from the Docblock of findByAdvert</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>64</td>
+                                        <td>No summary for method findByAdvert()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Controller/AuthController.php" id="Controller/AuthController.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Controller/AuthController.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>26</td>
+                                        <td>Argument $app is missing from the Docblock of connect</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Controller/AdvertPhotoController.php" id="Controller/AdvertPhotoController.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Controller/AdvertPhotoController.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>31</td>
+                                        <td>Argument $app is missing from the Docblock of connect</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Controller/HomepageController.php" id="Controller/HomepageController.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Controller/HomepageController.php
+                            <small style="float: right;padding-right: 10px;">9</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>26</td>
+                                        <td>Argument $app is missing from the Docblock of connect</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>47</td>
+                                        <td>Name of argument $request does not match with the DocBlock&#039;s name $page in indexAction()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>47</td>
+                                        <td>The type hint of the argument is incorrect for the type definition of the @param tag with argument $request in indexAction()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>notice</td>
+                                        <td>47</td>
+                                        <td>Parameter $page could not be found in indexAction()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>72</td>
+                                        <td>Name of argument $request does not match with the DocBlock&#039;s name $id in searchAction()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>72</td>
+                                        <td>The type hint of the argument is incorrect for the type definition of the @param tag with argument $request in searchAction()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>72</td>
+                                        <td>Argument $page is missing from the Docblock of searchAction</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>72</td>
+                                        <td>Name of argument $page does not match with the DocBlock&#039;s name $id in searchAction()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>notice</td>
+                                        <td>72</td>
+                                        <td>Parameter $id could not be found in searchAction()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Controller/CategoryController.php" id="Controller/CategoryController.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Controller/CategoryController.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>27</td>
+                                        <td>Argument $app is missing from the Docblock of connect</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Controller/AdvertController.php" id="Controller/AdvertController.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Controller/AdvertController.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>31</td>
+                                        <td>Argument $app is missing from the Docblock of connect</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Controller/UserController.php" id="Controller/UserController.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Controller/UserController.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>25</td>
+                                        <td>Argument $app is missing from the Docblock of connect</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Controller/MessageController.php" id="Controller/MessageController.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Controller/MessageController.php
+                            <small style="float: right;padding-right: 10px;">3</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>27</td>
+                                        <td>Argument $app is missing from the Docblock of connect</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>150</td>
+                                        <td>Name of argument $id does not match with the DocBlock&#039;s name $request in addAction()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>150</td>
+                                        <td>Argument $request is missing from the Docblock of addAction</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                            <div class="package-contents">
+                                    </div>
+                    </div>
+    </section>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/Controller.html">\Controller</a></li>
+                                                                            <li><a href="../namespaces/Form.html">\Form</a></li>
+                                                                            <li><a href="../namespaces/Provider.html">\Provider</a></li>
+                                                                            <li><a href="../namespaces/Repository.html">\Repository</a></li>
+                                                                            <li><a href="../namespaces/Service.html">\Service</a></li>
+                                                                            <li><a href="../namespaces/Utils.html">\Utils</a></li>
+                                                                            <li><a href="../namespaces/Validator.html">\Validator</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on September 9th, 2017 at 15:30.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

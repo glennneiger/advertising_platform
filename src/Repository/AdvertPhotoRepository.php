@@ -1,0 +1,117 @@
+<?php
+
+/**
+ * Advert Photo Repository
+ */
+
+namespace Repository;
+
+use Doctrine\DBAL\Connection;
+
+/**
+ * Class AdvertPhotoRepository.
+ *
+ * @package Repository
+ */
+class AdvertPhotoRepository
+{
+    /**
+     * Doctrine DBAL connection.
+     *
+     * @var \Doctrine\DBAL\Connection $db
+     */
+    protected $db;
+
+    /**
+     * TagRepository constructor.
+     *
+     * @param \Doctrine\DBAL\Connection $db
+     */
+    public function __construct(Connection $db)
+    {
+        $this->db = $db;
+    }
+
+    /**
+     * Fetch all records.
+     *
+     * @return array Result
+     */
+    public function findAll()
+    {
+        $queryBuilder = $this->queryAll();
+
+        return $queryBuilder->execute()->fetchAll();
+    }
+
+    /**
+     * Find one record.
+     *
+     * @param string $id Element id
+     *
+     * @return array|mixed Result
+     */
+    public function findOneById($id)
+    {
+        $queryBuilder = $this->queryAll();
+        $queryBuilder->where('p.id = :id')
+            ->setParameter(':id', $id, \PDO::PARAM_INT);
+        $result = $queryBuilder->execute()->fetch();
+
+        return !$result ? [] : $result;
+    }
+
+    public function findByAdvert($advertId)
+    {
+        return $this->queryAll()
+            ->join('p', 'si_adverts','a', 'p.advert_id = a.id')
+            ->where('a.id = :id')
+            ->setParameter('id', $advertId, \PDO::PARAM_INT)
+            ->execute()
+            ->fetchAll();
+    }
+
+    /**
+     * Save record.
+     *
+     * @param array $tag Tag
+     *
+     * @return boolean Result
+     */
+    public function save($tag)
+    {
+        if (isset($tag['id']) && ctype_digit((string) $tag['id'])) {
+            // update record
+            $id = $tag['id'];
+            unset($tag['id']);
+
+            return $this->db->update('si_advert_photos', $tag, ['id' => $id]);
+        } else {
+            // add new record
+            return $this->db->insert('si_advert_photos', $tag);
+        }
+    }
+
+    /**
+     * Remove record.
+     *
+     * @param array $advertPhoto AdvertPhoto
+     * @return boolean Result
+     */
+    public function delete($advertPhoto)
+    {
+        return $this->db->delete('si_advert_photos', ['id' => $advertPhoto['id']]);
+    }
+
+    /**
+     * Query all records.
+     *
+     * @return \Doctrine\DBAL\Query\QueryBuilder Result
+     */
+    protected function queryAll()
+    {
+        $queryBuilder = $this->db->createQueryBuilder();
+
+        return $queryBuilder->select('p.id, filepath, advert_id')->from('si_advert_photos', 'p');
+    }
+}

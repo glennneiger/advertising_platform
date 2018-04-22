@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% form_theme form with ['bootstrap_3_horizontal_layout.html.twig', 'form/form_errors.html.twig'] %}
+
+{% block title %}{{ 'title.category_delete'|trans }} - {{ category.name }}{% endblock %}
+
+{% block body %}
+    <div class="col-md-12">
+        <h1>{{ 'title.category_delete'|trans }} - {{ category.name }}</h1>
+    </div>
+    {{ form_start(form, { method: 'post', action: url('category_delete', {'id': category.id}) }) }}
+    {{ form_widget(form) }}
+    <input type="submit" value="{{ 'action.delete'|trans }}" class="btn btn-success" />
+    {{ form_end(form) }}
+    <a href="{{ url('category_index') }}" title="{{ 'label.back_to_list'|trans }}" class="btn btn-default">
+        <span class="fa fa-mail-reply" aria-hidden="true"></span>
+        {{ 'label.back_to_list'|trans }}
+    </a>
+{% endblock %}

@@ -1,0 +1,471 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="pl" datatype="plaintext" original="file.ext">
+        <body>
+          <trans-unit id="title.advert_search">
+              <source>title.advert_search</source>
+              <target>Szukaj ogłoszeń</target>
+          </trans-unit>
+          <trans-unit id="action.search">
+              <source>action.search</source>
+              <target> szukaj</target>
+          </trans-unit>
+          <trans-unit id="title.searched_adverts_list">
+              <source>title.searched_adverts_list</source>
+              <target> Lista wyszukanych ogłoszeń</target>
+          </trans-unit>
+          <trans-unit id="table.head.advert.topic">
+              <source>table.head.advert.topic</source>
+              <target>Tytuł ogłoszenia</target>
+          </trans-unit>
+          <trans-unit id="table.head.advert.city">
+              <source>table.head.advert.city</source>
+              <target>Miasto</target>
+          </trans-unit>
+          <trans-unit id="table.head.advert.price_from">
+              <source>table.head.advert.price_from</source>
+              <target>Cana [od]</target>
+          </trans-unit>
+          <trans-unit id="table.head.advert.price_to">
+              <source>table.head.advert.price_to</source>
+              <target>Cena [do]</target>
+          </trans-unit>
+          <trans-unit id="table.head.advert.type">
+              <source>table.head.advert.type</source>
+              <target>Typ ogłoszenia</target>
+          </trans-unit>
+          <trans-unit id="table.head.advert.category_id">
+              <source>table.head.advert.category_id</source>
+              <target>Kategoria</target>
+          </trans-unit>
+          <trans-unit id="no.searched.params">
+              <source>no.searched.params</source>
+              <target>Brak parametrów wyszukiwania</target>
+          </trans-unit>
+          <trans-unit id="search.again">
+              <source>search.again</source>
+              <target>Wyszukaj ponownie</target>
+          </trans-unit>
+          <trans-unit id="table.head.advert.price">
+              <source>table.head.advert.price</source>
+              <target>Cena</target>
+          </trans-unit>
+          <trans-unit id="table.head.advert.category">
+              <source>table.head.advert.category</source>
+              <target>Kategoria</target>
+          </trans-unit>
+          <trans-unit id="table.head.operations">
+              <source>table.head.operations</source>
+              <target>Operacje</target>
+          </trans-unit>
+          <trans-unit id="advert.type.purchase.label">
+              <source>advert.type.purchase.label</source>
+              <target>kupno</target>
+          </trans-unit>
+          <trans-unit id="advert.type.sale.label">
+              <source>advert.type.sale.label</source>
+              <target>sprzedaż</target>
+          </trans-unit>
+          <trans-unit id="advert.type.return.label">
+              <source>advert.type.return.label</source>
+              <target>oddanie</target>
+          </trans-unit>
+          <trans-unit id="advert.type.swap.label">
+              <source>advert.type.swap.label</source>
+              <target>wymiana</target>
+          </trans-unit>
+          <trans-unit id="title.advert_edit">
+              <source>title.advert_edit</source>
+              <target>Edycja ogłoszenia</target>
+          </trans-unit>
+          <trans-unit id="action.save">
+              <source>action.save</source>
+              <target>zapisz</target>
+          </trans-unit>
+          <trans-unit id="title.advert_add">
+              <source>title.advert_add</source>
+              <target>Dodaj ogłoszenie</target>
+          </trans-unit>
+          <trans-unit id="title.adverts_list">
+              <source>title.adverts_list</source>
+              <target>Lista ogłoszeń</target>
+          </trans-unit>
+          <trans-unit id="advert.photos.list">
+              <source>advert.photos.list</source>
+              <target>Lista zdjęć</target>
+          </trans-unit>
+          <trans-unit id="button.advert.photo.add">
+              <source>button.advert.photo.add</source>
+              <target>Dodaj zdjęcie</target>
+          </trans-unit>
+          <trans-unit id="button.advert.message.add">
+              <source>button.advert.message.add</source>
+              <target>Napisz wiadomość</target>
+          </trans-unit>
+          <trans-unit id="no_photos">
+              <source>no_photos</source>
+              <target>BRAK ZDJĘĆ</target>
+          </trans-unit>
+          <trans-unit id="title.advert_delete">
+              <source>title.advert_delete</source>
+              <target>Usuń ogłoszenie</target>
+          </trans-unit>
+          <trans-unit id="label.back_to_list">
+              <source>label.back_to_list</source>
+              <target>Wróć do listy</target>
+          </trans-unit>
+          <trans-unit id="action.delete">
+              <source>action.delete</source>
+              <target>usuń</target>
+          </trans-unit>
+          <trans-unit id="title.message_add">
+              <source>title.message_add</source>
+              <target>Napisz wiadomość</target>
+          </trans-unit>
+          <trans-unit id="table.head.message.topic">
+              <source>table.head.message.topic</source>
+              <target>Temat wiadomości</target>
+          </trans-unit>
+          <trans-unit id="table.head.message.type">
+              <source>table.head.message.type</source>
+              <target>Typ wiadomości</target>
+          </trans-unit>
+          <trans-unit id="value.queries.to.me">
+              <source>value.queries.to.me</source>
+              <target>DO MNIE</target>
+          </trans-unit>
+          <trans-unit id="value.queries.from.me">
+              <source>value.queries.from.me</source>
+              <target>WYSŁANE</target>
+          </trans-unit>
+          <trans-unit id="operation.view">
+              <source>operation.view</source>
+              <target>podgląd</target>
+          </trans-unit>
+          <trans-unit id="operation.view.advert">
+              <source>operation.view.advert</source>
+              <target>podgląd</target>
+          </trans-unit>
+          <trans-unit id="empty.list">
+              <source>empty.list</source>
+              <target>Lista jest pusta</target>
+          </trans-unit>
+          <trans-unit id="title.auth_edit_data">
+              <source>title.auth_edit_data</source>
+              <target>Edycja danych</target>
+          </trans-unit>
+          <trans-unit id="title.auth_login">
+              <source>title.auth_login</source>
+              <target>Logowanie</target>
+          </trans-unit>
+          <trans-unit id="action.login">
+              <source>action.login</source>
+              <target>zaloguj</target>
+          </trans-unit>
+          <trans-unit id="title.auth_edit_password">
+              <source>title.auth_edit_password</source>
+              <target>Zmiana hasła</target>
+          </trans-unit>
+          <trans-unit id="title.auth_register">
+              <source>title.auth_register</source>
+              <target>Rejestracja</target>
+          </trans-unit>
+          <trans-unit id="title.user_edit">
+              <source>title.user_edit</source>
+              <target>Edycja użytkownika</target>
+          </trans-unit>
+          <trans-unit id="table.head.user.login">
+              <source>table.head.user.login</source>
+              <target>Login</target>
+          </trans-unit>
+          <trans-unit id="operation.edit">
+              <source>operation.edit</source>
+              <target>edytuj</target>
+          </trans-unit>
+          <trans-unit id="operation.delete">
+              <source>operation.delete</source>
+              <target>usuń</target>
+          </trans-unit>
+          <trans-unit id="title.user_delete">
+              <source>title.user_delete</source>
+              <target>Usuń użytkownika</target>
+          </trans-unit>
+          <trans-unit id="labels.nav.prev">
+              <source>labels.nav.prev</source>
+              <target>Poprzednia strona</target>
+          </trans-unit>
+          <trans-unit id="label.nav.next">
+              <source>label.nav.next</source>
+              <target>Następna strona</target>
+          </trans-unit>
+          <trans-unit id="advertising.service">
+              <source>advertising.service</source>
+              <target>Serwis ogłoszeniowy</target>
+          </trans-unit>
+          <trans-unit id="users.link">
+              <source>users.link</source>
+              <target>Użytkownicy</target>
+          </trans-unit>
+          <trans-unit id="categories.link">
+              <source>categories.link</source>
+              <target>Kategorie</target>
+          </trans-unit>
+          <trans-unit id="add.category.link">
+              <source>add.category.link</source>
+              <target>Dodaj kategorię</target>
+          </trans-unit>
+          <trans-unit id="add.advert.link">
+              <source>add.advert.link</source>
+              <target>Dodaj ogłoszenie</target>
+          </trans-unit>
+          <trans-unit id="messages.link">
+              <source>messages.link</source>
+              <target>Wiadomości</target>
+          </trans-unit>
+          <trans-unit id="adverts.link">
+              <source>adverts.link</source>
+              <target>Ogłoszenia</target>
+          </trans-unit>
+          <trans-unit id="auth.edit.data.link">
+              <source>auth.edit.data.link</source>
+              <target>Profil</target>
+          </trans-unit>
+          <trans-unit id="auth.edit.password.link">
+              <source>auth.edit.password.link</source>
+              <target>Zmień hasło</target>
+          </trans-unit>
+          <trans-unit id="auth.logout.link">
+              <source>auth.logout.link</source>
+              <target>Wyloguj</target>
+          </trans-unit>
+          <trans-unit id="auth.login.link">
+              <source>auth.login.link</source>
+              <target>Zaloguj</target>
+          </trans-unit>
+          <trans-unit id="auth.register.link">
+              <source>auth.register.link</source>
+              <target>Zarejestruj</target>
+          </trans-unit>
+          <trans-unit id="title.category_edit">
+              <source>title.category_edit</source>
+              <target>Edycja kategorii</target>
+          </trans-unit>
+          <trans-unit id="title.category_add">
+              <source>title.category_add</source>
+              <target>Dodaj kategorię</target>
+          </trans-unit>
+          <trans-unit id="title.categories_list">
+              <source>title.categories_list</source>
+              <target>Lista kategorii</target>
+          </trans-unit>
+          <trans-unit id="table.head.category.name">
+              <source>table.head.category.name</source>
+              <target>Nazwa kategorii</target>
+          </trans-unit>
+          <trans-unit id="title.category_delete">
+              <source>title.category_delete</source>
+              <target>Usuń kategorię</target>
+          </trans-unit>
+          <trans-unit id="advert.photo.add.title">
+              <source>advert.photo.add.title</source>
+              <target>Dodaj zdjęcie</target>
+          </trans-unit>
+          <trans-unit id="title.advert_photo_delete">
+              <source>title.advert_photo_delete</source>
+              <target>Usuń zdjęcie</target>
+          </trans-unit>
+          <trans-unit id="message.register_success">
+              <source>message.register_success</source>
+              <target>Zarejestrowno pomyślnie!</target>
+          </trans-unit>
+          <trans-unit id="message.edit_success">
+              <source>message.edit_success</source>
+              <target>Zedytowano</target>
+          </trans-unit>
+          <trans-unit id="message.wrong_current_passwd">
+              <source>message.wrong_current_passwd</source>
+              <target>Błędne aktualne hasło</target>
+          </trans-unit>
+          <trans-unit id="message.element_successfully_added">
+              <source>message.element_successfully_added</source>
+              <target>Dodano</target>
+          </trans-unit>
+          <trans-unit id="message.element_successfully_deleted">
+              <source>message.element_successfully_deleted</source>
+              <target>Usunięto</target>
+          </trans-unit>
+          <trans-unit id="message.record_not_found">
+              <source>message.record_not_found</source>
+              <target>Nie znaleziono</target>
+          </trans-unit>
+          <trans-unit id="message.element_successfully_edited">
+              <source>message.element_successfully_edited</source>
+              <target>Edytowano</target>
+          </trans-unit>
+          <trans-unit id="message.cant_sent_message_to_you">
+              <source>message.cant_sent_message_to_you</source>
+              <target>Nie możesz wysłać wiadomości do samego siebie</target>
+          </trans-unit>
+          <trans-unit id="label.topic">
+              <source>label.topic</source>
+              <target>Temat</target>
+          </trans-unit>
+          <trans-unit id="label.content">
+              <source>label.content</source>
+              <target>Treść</target>
+          </trans-unit>
+          <trans-unit id="label.city">
+              <source>label.city</source>
+              <target>Miasto</target>
+          </trans-unit>
+          <trans-unit id="label.price">
+              <source>label.price</source>
+              <target>Cena</target>
+          </trans-unit>
+          <trans-unit id="label.type">
+              <source>label.type</source>
+              <target>Typ</target>
+          </trans-unit>
+          <trans-unit id="label.category">
+              <source>label.category</source>
+              <target>Kategoria</target>
+          </trans-unit>
+          <trans-unit id="label.login">
+              <source>label.login</source>
+              <target>Login</target>
+          </trans-unit>
+          <trans-unit id="label.email">
+              <source>label.email</source>
+              <target>Email</target>
+          </trans-unit>
+          <trans-unit id="label.password">
+              <source>label.password</source>
+              <target>Hasło</target>
+          </trans-unit>
+          <trans-unit id="label.repeat">
+              <source>label.repeat</source>
+              <target>Powtórz hasło</target>
+          </trans-unit>
+          <trans-unit id="label.current">
+              <source>label.current</source>
+              <target>Obecne hasło</target>
+          </trans-unit>
+          <trans-unit id="label.name">
+              <source>label.name</source>
+              <target>Imię</target>
+          </trans-unit>
+          <trans-unit id="label.surname">
+              <source>label.surname</source>
+              <target>Nazwisko</target>
+          </trans-unit>
+          <trans-unit id="label.price_from">
+              <source>label.price_from</source>
+              <target>Cana [od]</target>
+          </trans-unit>
+          <trans-unit id="label.price_to">
+              <source>label.price_to</source>
+              <target>Cena [do]</target>
+          </trans-unit>
+          <trans-unit id="label.filepath">
+              <source>label.filepath</source>
+              <target>Zdjęcie</target>
+          </trans-unit>
+          <trans-unit id="label.message">
+              <source>label.message</source>
+              <target>Wiadomość</target>
+          </trans-unit>
+          <trans-unit id="user.title_list">
+              <source>user.title_list</source>
+              <target>Lista użytkowników</target>
+          </trans-unit>
+          <trans-unit id="conversation.title_list">
+              <source>conversation.title_list</source>
+              <target>Lista konwersacji</target>
+          </trans-unit>
+          <trans-unit id="message.empty.list">
+              <source>message.empty.list</source>
+              <target>Brak wyników</target>
+          </trans-unit>
+          <trans-unit id="label.created.at">
+              <source>label.created.at</source>
+              <target>Data dodania</target>
+          </trans-unit>
+          <trans-unit id="label.advert.type">
+              <source>label.advert.type</source>
+              <target>Typ ogłoszenia</target>
+          </trans-unit>
+          <trans-unit id="label.author">
+              <source>label.author</source>
+              <target>Autor</target>
+          </trans-unit>
+          <trans-unit id="label.category.name">
+              <source>label.category.name</source>
+              <target>Nazwa kategorii</target>
+          </trans-unit>
+          <trans-unit id="Bad credentials.">
+              <source>Bad credentials.</source>
+              <target>Nieprawidłowy login lub hasło</target>
+          </trans-unit>
+          <trans-unit id="ROLE_ADMIN">
+              <source>ROLE_ADMIN</source>
+              <target>ADMINISTARTOR</target>
+          </trans-unit>
+          <trans-unit id="ROLE_USER">
+              <source>ROLE_USER</source>
+              <target>UŻYTKOWNIK</target>
+          </trans-unit>
+          <trans-unit id="label.role">
+              <source>label.role</source>
+              <target>Rola</target>
+          </trans-unit>
+          <trans-unit id="title.advert_deactivate">
+              <source>title.advert_deactivate</source>
+              <target>Dezaktywacja ogłoszenia</target>
+          </trans-unit>
+          <trans-unit id="action.deactivate">
+              <source>action.deactivate</source>
+              <target>Dezaktywuj</target>
+          </trans-unit>
+          <trans-unit id="message.cant_delete">
+              <source>message.cant_delete</source>
+              <target>Nie można usunąć tego użytkownika</target>
+          </trans-unit>
+          <trans-unit id="conversation.topic">
+              <source>conversation.topic</source>
+              <target>Temat konwersacji</target>
+          </trans-unit>
+          <trans-unit id="title.advert_activate">
+              <source>title.advert_activate</source>
+              <target>Aktywacja ogłoszenia</target>
+          </trans-unit>
+          <trans-unit id="action.activate">
+              <source>action.activate</source>
+              <target>Aktywuj</target>
+          </trans-unit>
+          <trans-unit id="action.sent">
+              <source>action.sent</source>
+              <target>Wyślij</target>
+          </trans-unit>
+          <trans-unit id="message.element_successfully_deactivated">
+              <source>message.element_successfully_deactivated</source>
+              <target>Dezaktywowano ogłoszenie</target>
+          </trans-unit>
+          <trans-unit id="message.element_successfully_activated">
+              <source>message.element_successfully_activated</source>
+              <target>Aktywowano ogłoszenie</target>
+          </trans-unit>
+          <trans-unit id="internal.server.error">
+              <source>internal.server.error</source>
+              <target>Błąd serwera</target>
+          </trans-unit>
+          <trans-unit id="client.error">
+              <source>client.error</source>
+              <target>Błąd aplikacji</target>
+          </trans-unit>
+         <trans-unit id="page.not.found">
+              <source>page.not.found</source>
+              <target>Strona nie znaleziona</target>
+          </trans-unit>
+        </body>
+    </file>
+</xliff>

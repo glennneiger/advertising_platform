@@ -1,0 +1,16 @@
+.form-group label.control-label.required:after {
+    content: " *";
+    color: #a94442;;
+}
+body {
+    padding-top: 54px;
+}
+select.form-control {
+  height: inherit !important;
+}
+
+@media (min-width: 992px) {
+    body {
+        padding-top: 56px;
+    }
+}

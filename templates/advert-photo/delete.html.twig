@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% form_theme form with ['bootstrap_3_horizontal_layout.html.twig', 'form/form_errors.html.twig'] %}
+
+{% block title %}{{ 'title.advert_photo_delete'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="col-md-12">
+        <h1>{{ 'title.advert_photo_delete'|trans }}</h1>
+    </div>
+    <div class="col-md-12">
+        <img class="img-responsive" src="{{ app.request.basepath }}/uploads/{{ photo.filepath }}"/>
+    </div>
+    {{ form_start(form, { method: 'post', action: url('advert_photo_delete', {'id': photo.id}) }) }}
+    {{ form_widget(form) }}
+    <input type="submit" value="{{ 'action.delete'|trans }}" class="btn btn-success" />
+    {{ form_end(form) }}
+    <a href="{{ url('advert_view', {'id': photo.advert_id}) }}" title="{{ 'label.back_to_list'|trans }}" class="btn btn-default">
+        <span class="fa fa-mail-reply" aria-hidden="true"></span>
+        {{ 'label.back_to_list'|trans }}
+    </a>
+{% endblock %}

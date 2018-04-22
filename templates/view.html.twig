@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.searched_adverts_list'|trans }}
+{% endblock %}
+
+{% block body %}
+    <div class="col-md-12">
+        <h1>
+            {{ 'title.searched_adverts_list'|trans }}
+        </h1>
+        <p>
+          {% if data|length %}
+            {{ 'table.head.advert.topic'|trans }}: {{ data.topic }}<br>
+            {{ 'table.head.advert.city'|trans }}: {{ data.city }}<br>
+            {{ 'table.head.advert.price_from'|trans }}: {{ data.price_from }} zł<br>
+            {{ 'table.head.advert.price_to'|trans }}: {{ data.price_to }} zł<br>
+            {{ 'table.head.advert.type'|trans }}: {{ data.type }}<br>
+            {{ 'table.head.advert.category_id'|trans }}: {{ data.category_id }}<br>
+          {% else %}
+            {{ 'no.searched.params'|trans }}
+          {% endif %}
+          <a href="{{ url('homepage') }}" class="btn btn-default">{{ 'search.again'|trans }}</a>
+        </p>
+    </div>
+    {% if paginator.data|length %}
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>
+                        {{ 'table.head.advert.topic'|trans }}
+                    </th>
+                    <th>
+                        {{ 'table.head.advert.city'|trans }}
+                    </th>
+                    <th>
+                        {{ 'table.head.advert.price'|trans }}
+                    </th>
+                    <th>
+                        {{ 'table.head.advert.type'|trans }}
+                    </th>
+                    <th>
+                        {{ 'table.head.advert.category'|trans }}
+                    </th>
+                    <th>
+                        {{ 'table.head.operations'|trans }}
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for row in paginator.data %}
+                    <tr>
+                        <td>
+                            {{ row.topic }}
+                        </td>
+                        <td>
+                            {{ row.city }}
+                        </td>
+                        <td>
+                            {{ row.price }}
+                        </td>
+                        <td>
+                            {% if row.type == 0 %}
+                                {{ 'advert.type.purchase.label'|trans }}
+                            {% elseif row.type == 1 %}
+                                {{ 'advert.type.sale.label'|trans}}
+                            {% elseif row.type == 2 %}
+                                {{ 'advert.type.return.label'|trans }}
+                            {% elseif row.type == 3 %}
+                                {{ 'advert.type.swap.label'|trans }}
+                            {% endif %}
+                        </td>
+                        <td>
+                            {{ row.category_name }}
+                        </td>
+                        <td>
+                            <a href="{{ url('advert_view', {'id': row.id}) }}">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                            </a>
+                            {% if is_granted('ROLE_ADMIN') or (app.user and row.author == app.user.username) %}
+                                <a href="{{ url('advert_edit', {'id': row.id}) }}">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                </a>
+                                <a href="{{ url('advert_delete', {'id': row.id}) }}">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% include 'default/_search_paginator.html.twig' with {
+                paginator: paginator,
+                route_name: 'search_paginated',
+            } %}
+        </div>
+    {% else %}
+        <div class="col-md-12">
+            {{ 'message.empty.list'|trans }}
+        </div>
+    {% endif %}
+{% endblock %}

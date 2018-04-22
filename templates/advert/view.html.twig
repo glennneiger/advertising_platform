@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="col-md-12">
+        <h1>
+            {{ advert.topic }}
+        </h1>
+    </div>
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-4">
+                <label>{{ 'label.city'|trans }}</label>: {{ advert.city }}
+            </div>
+            <div class="col-md-4">
+                <label>{{ 'label.price'|trans }}</label>: {{ advert.price }}
+            </div>
+            <div class="col-md-4">
+                <label>{{ 'label.advert.type'|trans }}</label>:
+                {% if advert.type == 0 %}
+                    {{ 'advert.type.purchase.label'|trans }}
+                {% elseif advert.type == 1 %}
+                    {{ 'advert.type.sale.label'|trans}}
+                {% elseif advert.type == 2 %}
+                    {{ 'advert.type.return.label'|trans }}
+                {% elseif advert.type == 3 %}
+                    {{ 'advert.type.swap.label'|trans }}
+                {% endif %}
+            </div>
+            <div class="col-md-4">
+                <label>{{ 'label.created.at'|trans }}</label>: {{ advert.created_at }}
+            </div>
+            <div class="col-md-4">
+                <label>{{ 'label.category'|trans }}</label>: {{ advert.category_name }}
+            </div>
+            <div class="col-md-4">
+                <label>{{ 'label.author'|trans }}</label>: {{ advert.author }}
+            </div>
+            <div class="col-md-4">
+                <label>{{ 'label.content'|trans }}</label>: {{ advert.content }}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <h3>
+            {{ 'advert.photos.list'|trans }}
+        </h3>
+        <div class="row">
+            <div class="col-md-12">
+                {% if is_granted('ROLE_ADMIN') or (user and user.id == advert.user_id) %}
+                    <a class="btn btn-success" href="{{ url('advert_photo_add', {'advert_id': advert.id}) }}">
+                        {{ 'button.advert.photo.add'|trans }}
+                    </a>
+                {% endif %}
+                {% if is_granted('IS_AUTHENTICATED_FULLY') and user.id != advert.user_id %}
+                    <a class="btn btn-warning" href="{{ url('message_add', {'id': advert.id}) }}">
+                        {{ 'button.advert.message.add'|trans }}
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                {% if photos is defined and photos|length %}
+                    <div class="row">
+                        {% for photo in photos %}
+                            <div class="col-md-4">
+                                {% if is_granted('ROLE_ADMIN') or (user and user.id == advert.user_id) %}
+                                    <div class="row">
+                                        <div class="col-md-12 text-right">
+                                            <a href="{{ url('advert_photo_delete', {'id': photo.id}) }}">
+                                                <span class="glyphicon glyphicon-trash"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                <a href="#" class="thumbnail" data-toggle="modal" data-target="#myModal-{{ photo.id }}">
+                                    <img class="img-responsive" src="{{ global.request.basepath }}/uploads/{{ photo.filepath }}"/>
+                                </a>
+                                <div class="modal fade" id="myModal-{{ photo.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Zamknij</span></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>
+                                                    <img class="img-responsive" src="{{ global.request.basepath }}/uploads/{{ photo.filepath }}"/>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ 'no_photos'|trans }}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

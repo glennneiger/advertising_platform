@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% form_theme form with ['bootstrap_3_horizontal_layout.html.twig', 'form/form_errors.html.twig'] %}
+
+{% block title %}{{ 'title.message_add'|trans }}{% endblock %}
+
+{% block stylesheets %}
+  {{ parent() }}
+  <style>
+    footer {
+      bottom: 0;
+      position: fixed;
+      width: 100%;
+      height: 50px;
+    }
+  </style>
+{% endblock %}
+
+{% block body %}
+    <div class="col-md-12">
+        <h1>{{ 'title.message_add'|trans }}</h1>
+    </div>
+    <div class="col-md-12">
+        {{ form_start(form, { method: 'post', action: url('message_add', {'id': advert.id}) }) }}
+        {{ form_widget(form) }}
+        <div class="col-md-12">
+            <div class="form-group">
+                <input type="submit" value="{{ 'action.sent'|trans }}" class="btn btn-success" />
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

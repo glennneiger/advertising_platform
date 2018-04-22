@@ -1,0 +1,165 @@
+<?php
+
+/**
+ * Advert type.
+ */
+
+namespace Form;
+
+use Repository\AdvertRepository;
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+
+/**
+ * Class TagType.
+ *
+ * @package Form
+ */
+class AdvertType extends AbstractType
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder->add(
+            'topic',
+            TextType::class,
+            [
+                'label' => 'label.topic',
+                'required' => true,
+                'attr' => [
+                    'max_length' => 45,
+                ],
+                'constraints' => [
+                    new Assert\NotBlank(
+                        ['groups' => ['advert-default']]
+                    ),
+                    new Assert\Length(
+                        [
+                            'groups' => ['advert-default'],
+                            'min' => 3,
+                            'max' => 45,
+                        ]
+                    ),
+                ],
+            ]
+        );
+        $builder->add(
+            'content',
+            TextareaType::class,
+            [
+                'label' => 'label.content',
+                'required' => true,
+                'constraints' => [
+                    new Assert\NotBlank(
+                        ['groups' => ['advert-default']]
+                    ),
+                ],
+            ]
+        );
+        $builder->add(
+            'city',
+            TextType::class,
+            [
+                'label' => 'label.city',
+                'required' => true,
+                'attr' => [
+                    'max_length' => 45,
+                ],
+                'constraints' => [
+                    new Assert\NotBlank(
+                        ['groups' => ['advert-default']]
+                    ),
+                    new Assert\Length(
+                        [
+                            'groups' => ['advert-default'],
+                            'min' => 3,
+                            'max' => 45,
+                        ]
+                    ),
+                ],
+            ]
+        );
+        $builder->add(
+            'price',
+            TextType::class,
+            [
+                'label' => 'label.price',
+                'required' => true,
+                'constraints' => [
+                    new Assert\NotBlank(
+                        ['groups' => ['advert-default']]
+                    ),
+                    new Assert\Type(
+                        [
+                            'type' => 'numeric',
+                            'groups' => ['advert-default'],
+                        ]
+                    )
+                ],
+            ]
+        );
+        $builder->add(
+            'type',
+            ChoiceType::class,
+            [
+                'label' => 'label.type',
+                'required' => true,
+                'choices' => [
+                    'advert.type.purchase.label' => AdvertRepository::PURCHASE_TYPE,
+                    'advert.type.sale.label' => AdvertRepository::SALE_TYPE,
+                    'advert.type.return.label' => AdvertRepository::RETURN_TYPE,
+                    'advert.type.swap.label' => AdvertRepository::SWAP_TYPE,
+                ],
+                'constraints' => [
+                    new Assert\NotBlank(
+                        ['groups' => ['advert-default']]
+                    ),
+                ],
+            ]
+        );
+        $builder->add(
+            'category_id',
+            ChoiceType::class,
+            [
+                'label' => 'label.category',
+                'required' => true,
+                'constraints' => [
+                    new Assert\NotBlank(
+                        ['groups' => ['advert-default']]
+                    ),
+                ],
+                'choices' => isset($options['category_repository'])
+                    ? $options['category_repository']->getChoices()
+                    : [],
+            ]
+        );
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults(
+            [
+                'validation_groups' => 'advert-default',
+                'category_repository' => null,
+            ]
+        );
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getBlockPrefix()
+    {
+        return 'advert_type';
+    }
+}

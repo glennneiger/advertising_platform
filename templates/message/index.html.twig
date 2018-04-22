@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+  {{ parent() }}
+  <style>
+    footer {
+      bottom: 0;
+      position: fixed;
+      width: 100%;
+    }
+  </style>
+{% endblock %}
+
+{% block body %}
+  <div class="col-lg-12">
+    <h1 class="my-4">{{ 'conversation.title_list'|trans }}</h1>
+    {% if paginator.data|length %}
+
+      <table class="table table-striped">
+          <thead>
+          <tr>
+              <th>
+                  {{ 'table.head.message.topic'|trans }}
+              </th>
+              <th>
+                  {{ 'table.head.message.type'|trans }}
+              </th>
+              <th>
+                  {{ 'table.head.operations'|trans }}
+              </th>
+          </tr>
+          </thead>
+          <tbody>
+          {% for row in paginator.data %}
+              <tr>
+                  <td>
+                      {{ row.topic }}
+                  </td>
+                  <td>
+                      {% if user.id == row.owner_id %}
+                        {{ 'value.queries.to.me'|trans }}
+                      {% else %}
+                        {{ 'value.queries.from.me'|trans }}
+                      {% endif %}
+                  </td>
+                  <td>
+                      <a href="{{ url('message_view', {'id': row.id}) }}">
+                          <span class="glyphicon glyphicon-eye-open"></span> {{ 'operation.view'|trans }}
+                      </a>
+                      <a href="{{ url('advert_view', {'id': row.advert_id}) }}">
+                          <span class="glyphicon glyphicon-bullhorn"></span> {{ 'operation.view.advert'|trans }}
+                      </a>
+                  </td>
+              </tr>
+          {% endfor %}
+          </tbody>
+      </table>
+      {% include 'default/_paginator.html.twig' with {
+          paginator: paginator,
+          route_name: 'message_index_paginated',
+      } %}
+
+    {% else %}
+            {{ 'empty.list'|trans }}
+    {% endif %}
+  </div>
+{% endblock %}

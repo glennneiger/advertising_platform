@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% form_theme form with ['bootstrap_3_horizontal_layout.html.twig', 'form/form_errors.html.twig'] %}
+
+{% block title %}{{ 'title.advert_delete'|trans }} - {{ advert.topic }}{% endblock %}
+
+{% block body %}
+    {% if advert.is_active %}
+        {% set suffix = 'deactivate' %}
+    {% else %}
+        {% set suffix = 'activate' %}
+    {% endif %}
+    <div class="col-md-12">
+        <h1>{{ ('title.advert_' ~ suffix)|trans }} - {{ advert.topic }}</h1>
+    </div>
+    {{ form_start(form, { method: 'post', action: url('advert_activity', {'id': advert.id}) }) }}
+    {{ form_widget(form) }}
+    <input type="submit" value="{{ ('action.' ~ suffix)|trans }}" class="btn btn-success" />
+    {{ form_end(form) }}
+    <a href="{{ url('advert_index') }}" title="{{ 'label.back_to_list'|trans }}" class="btn btn-default">
+        <span class="fa fa-mail-reply" aria-hidden="true"></span>
+        {{ 'label.back_to_list'|trans }}
+    </a>
+{% endblock %}

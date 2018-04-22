@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="col-md-12">
+        <h1>
+            {{ 'advert.photo.add.title'|trans }} - {{ advert.topic }}
+        </h1>
+    </div>
+    <div class="col-md-12">
+        {{ form_start(form, { method: 'post', action: url('advert_photo_add', {'advert_id': advert.id}) }) }}
+        {{ form_widget(form) }}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input type="submit" value="{{ 'action.save'|trans }}" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

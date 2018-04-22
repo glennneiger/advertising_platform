@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+{% form_theme form with ['bootstrap_3_layout.html.twig', 'form/form_errors.html.twig'] %}
+
+{% block body %}
+  <div class="col-lg-6">
+    <h1 class="my-4">{{ 'conversation.topic'|trans }}: {{ conversation.topic }}</h1>
+    <div class="col-md-12">
+        {{ form_start(form, { method: 'post', action: url('message_view', {'id': conversation.id}) }) }}
+        {{ form_widget(form) }}
+        <div class="col-md-12">
+            <div class="form-group">
+                <input type="submit" value="{{ 'action.sent'|trans }}" class="btn btn-success" />
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+    {% if paginator.data|length %}
+      <table class="table table-striped">
+          <tbody>
+          {% for row in paginator.data %}
+              <tr>
+                  <td class="text-right" style="max-width:30px;">
+                      {{ row.login }}:<br>
+                      {{ row.created_at|date('d.m.Y H:i:s') }}
+                  </td>
+                  <td>
+                      {{ row.content }}
+                  </td>
+
+              </tr>
+          {% endfor %}
+          </tbody>
+      </table>
+      {% include 'default/_paginator.html.twig' with {
+          paginator: paginator,
+          route_name: 'message_index_paginated',
+      } %}
+
+    {% else %}
+            {{ 'empty.list'|trans }}
+    {% endif %}
+  </div>
+{% endblock %}
