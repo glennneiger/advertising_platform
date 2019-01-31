@@ -1,8 +1,3 @@
-Instalacja serwisu:
+Site installation:
 
-pobierz composer.phar
-uruchom php composer.phar install
-zmień dane dostępowe do bazy danych w pliku src/app.php
-zaimportuj bazę danych z folderu data/
-login i hasło do konta administartora: admin
-zmień hasło zaraz po instalacji
+download composer.phar run php composer.phar install change access data to the database in the file src / app.php import the database from the folder data / login and password to the admin account: admin change the password immediately after installation
